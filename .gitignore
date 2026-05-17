@@ -1,0 +1,36 @@
+# Compilation & Build Artifacts
+*.hex
+*.elf
+*.bin
+*.o
+*.d
+*.eep
+*.lst
+*.map
+*.sym
+build/
+bin/
+out/
+
+# IDEs & Editor Configuration
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+*.workspace
+*.project
+*.cproject
+.settings/
+
+# Proteus Simulation Backups & Temporary Files
+*.pdsprj.bak
+*.pdsprj.*.bak
+*.pdsbak
+*.dbk
+*.~*
+
+# OS-specific files
+Thumbs.db
+Desktop.ini
+.DS_Store
