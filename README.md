@@ -1,4 +1,4 @@
-# 🌿 Smart Plant System: Adaptive Soil Moisture Monitoring & Irrigation Control
+# Smart Plant System: Adaptive Soil Moisture Monitoring & Irrigation Control
 
 [![University](https://img.shields.io/badge/University-Universitas%20Indonesia-blue.svg?style=flat-square)](https://www.ui.ac.id)
 [![Department](https://img.shields.io/badge/Department-Electrical%20Engineering-darkblue.svg?style=flat-square)](https://ee.ui.ac.id)
@@ -13,15 +13,15 @@ Developed by **Group 21** as the final project for the Embedded Systems Practicu
 
 ---
 
-## 🎬 Project Demonstration Video
+## Project Demonstration Video
 
 [![Smart Plant System Demo Video](https://img.shields.io/badge/YouTube-Smart%20Plant%20System%20Demo-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/IxW-3-iBPCM?si=JvgNWnSlYre8lw8v)
 
-> 💡 **Watch the Live Demonstration:** [Smart Plant System Full Demonstration Video](https://youtu.be/IxW-3-iBPCM?si=JvgNWnSlYre8lw8v)
+> **Watch the Live Demonstration:** [Smart Plant System Full Demonstration Video](https://youtu.be/IxW-3-iBPCM?si=JvgNWnSlYre8lw8v)
 
 ---
 
-## 👥 Group 21 — Roles and Responsibilities
+## Group 21 — Roles and Responsibilities
 
 | Name | Student ID | Role | Primary Responsibilities |
 | :--- | :---: | :---: | :--- |
@@ -33,7 +33,7 @@ Developed by **Group 21** as the final project for the Embedded Systems Practicu
 
 ---
 
-## 🛠️ System Architecture
+## System Architecture
 
 The system uses a bare-metal **Sense-Process-Actuate** architecture at 16 MHz with zero library dependencies:
 
@@ -77,7 +77,7 @@ graph TD
 
 ---
 
-## ⚡ Hardware Pin Assignment & Register Configuration
+## Hardware Pin Assignment & Register Configuration
 
 ### Pin Mapping
 * **A0 (PC0):** Capacitive Soil Sensor Analog Input.
@@ -98,7 +98,7 @@ graph TD
 
 ---
 
-## ⚙️ Quick Assembly & Wiring Guide
+## Quick Assembly & Wiring Guide
 
 1. **Power Rails:** Connect Arduino 5V and GND to the breadboard rails.
 2. **Potentiometer:** Connect left/right pins to 5V/GND, center wiper pin to **A1**.
@@ -109,7 +109,7 @@ graph TD
 7. **MOSFET & DC Pump:** 
    * Connect IRLZ44N **Source** to GND, **Gate** to **D6** via a 100Ω gate resistor, and **Drain** to the pump's negative wire.
    * Connect pump's positive wire to a **dedicated external power supply** (Powerbank) and share a **common ground** with the Arduino.
-   * ⚠️ **EMI Filter:** Install a **1N4007 flyback diode** across the pump, and place a **100µF electrolytic** + **100nF ceramic capacitor** in parallel across pump power lines to suppress electrical noise.
+   * **EMI Filter:** Install a **1N4007 flyback diode** across the pump, and place a **100µF electrolytic** + **100nF ceramic capacitor** in parallel across pump power lines to suppress electrical noise.
 
 ---
 
@@ -131,7 +131,7 @@ graph TD
 
 ---
 
-## 🔍 EMI Diagnosis & Mitigation (Crucial Hardware Lesson)
+## EMI Diagnosis & Mitigation (Crucial Hardware Lesson)
 During testing, brushed DC pump commutator sparks generated severe **conducted electromagnetic interference (EMI)**. This noise contaminated `AVcc`, causing frozen ADC soil moisture readings and corrupted USART serial transmission.
 
 **Resolution:**
@@ -141,7 +141,7 @@ During testing, brushed DC pump commutator sparks generated severe **conducted e
 
 ---
 
-## 📊 Decision Logic & System Testing
+## Decision Logic & System Testing
 
 ### Decision State Table
 | Soil Moisture | Temp | Humidity | Pump State | PWM Duty | LED Indicator | Buzzer | Output Status |
@@ -162,13 +162,13 @@ The system was verified across **24 integration test scenarios** including senso
 
 ---
 
-## 📸 System Documentation & Telemetry
+## System Documentation & Telemetry
 
-| 🥀 Dry Soil (Automatic Irrigation Active) | 🌿 Adequate Soil (Pump Standby) |
+| Dry Soil (Automatic Irrigation Active) | Adequate Soil (Pump Standby) |
 | :---: | :---: |
 | ![Active Irrigation](documentation/full-hardware-assembly-dry-condition.jpeg) | ![Standby Mode](documentation/full-hardware-assembly-normal-condition.jpeg) |
 
-### 🖥️ USART Telemetry Sample Block
+### USART Telemetry Sample Block
 Telemetry is transmitted at 9600 Baud every second:
 ```text
 =================================
@@ -185,7 +185,7 @@ MANUAL     : OFF
 
 ---
 
-## 🛠️ Compilation & Upload Guide
+## Compilation & Upload Guide
 
 1. Place **[source/main.S](file:///c:/Github/smart-plant-system/source/main.S)** inside a clean Arduino project directory named `source`.
 2. Connect your Arduino Uno, open `source.ino` (or target `.S` file directly) in the **Arduino IDE (v2.x)**.
@@ -194,7 +194,7 @@ MANUAL     : OFF
 
 ---
 
-## ⚖️ License & Acknowledgements
+## License & Acknowledgements
 
 * **License:** Licensed under the **[MIT License](file:///c:/Github/smart-plant-system/LICENSE)**.
 * **Acknowledgements:** Sincere gratitude to **Dr. Eng. Muhammad Salman, S.T., M.I.T.**, the Embedded Systems (MBD) teaching team, and the **Digital Laboratory (Digilab UI)** assistants.
